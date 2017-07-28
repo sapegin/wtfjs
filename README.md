@@ -34,9 +34,9 @@ In any case, just read this. Probably you're going to find something new for you
 console.log('hello, world!') // > hello, world!
 ```
 
-## `[]` is truly, but not `true`
+## `[]` is truthy, but not `true`
 
-An array is a truthy value, however, it's not equal `true`.
+An array is a truthy value, however, it's not equal to `true`.
 
 ```js
 !![]       // -> true
@@ -45,21 +45,21 @@ An array is a truthy value, however, it's not equal `true`.
 
 ### 💡 Explanation:
 
-Here are liks to the corresponding sections in the ECMA-262 specification:
+Here are links to the corresponding sections in the ECMA-262 specification:
 
 * [**12.5.9** Logical NOT Operator (`!`)](https://www.ecma-international.org/ecma-262/#sec-logical-not-operator)
 * [**7.2.13** Abstract Equality Comparison](https://www.ecma-international.org/ecma-262/#sec-abstract-equality-comparison)
 
 ## `null` is falsy, but not `false`
 
-Despite the fact that `null` is falsy value, it's not equal `false`.
+Despite the fact that `null` is falsy value, it's not equal to `false`.
 
 ```js
 !!null        // -> false
 null == false // -> false
 ```
 
-At the same time, other falsy values, like `0` or `''` are equal `false`.
+At the same time, other falsy values, like `0` or `''` are equal to `false`.
 
 ```js
 0 == false  // -> true
@@ -74,7 +74,7 @@ The explanation is the same as for previous example. Here's a corresponding link
 
 ## `undefined` and `Number`
 
-If we don't pass any argument into a `Number` constructor, we'll get `0`. `undefined` is a value assigned to formal arguments which there are no actual arguments, so you might expect that `Number` without arguments takes `undefined` as a value of its parameter. However, when we pass `undefined`, we will get `NaN`.
+If we don't pass any argument into the `Number` constructor, we'll get `0`. `undefined` is a value assigned to formal arguments which there are no actual arguments, so you might expect that `Number` without arguments takes `undefined` as a value of its parameter. However, when we pass `undefined`, we will get `NaN`.
 
 ```js
 Number()          // -> 0
@@ -151,7 +151,7 @@ Since Node.js is based on V8 engine, HTML-like comments are supported in the Nod
 
 ## `NaN` is ~~not~~ a number
 
-Despite the fact that type of `NaN` is a `'number'`, `NaN` is not instance of number:
+Despite the fact that type of `NaN` is a `'number'`, `NaN` is not instance of number
 
 ```js
 typeof NaN            // -> 'number'
@@ -160,10 +160,7 @@ NaN instanceof Number // -> false
 
 ### 💡 Explanation:
 
-Explanations of how `typeof` and `instanceof` operators work:
-
-* [**12.5.5** The `typeof` Operator](https://www.ecma-international.org/ecma-262/#sec-typeof-operator)
-* [**12.10.4** Runtime Semantics: InstanceofOperator(`O`,`C`)](https://www.ecma-international.org/ecma-262/#sec-instanceofoperator)
+TODO
 
 ## `[]` and `null` are objects
 
@@ -174,13 +171,7 @@ typeof null // -> 'object'
 
 ### 💡 Explanation:
 
-The behavior of `typeof` operator is defined in this section of the specification:
-
-* [**12.5.5** The `typeof` Operator](https://www.ecma-international.org/ecma-262/#sec-typeof-operator)
-
-According to the specifications, the `typeof` operator returns a string according to [Table 35: `typeof` Operator Results](https://www.ecma-international.org/ecma-262/#table-35). For `null`, ordinary, standard exotic and non-standard exotic objects which does not implement `[[Call]]` it returns string `"object"`.
-
-However, you can check the type of object using `toString` method.
+TODO. However, you can check this using `toString` method.
 
 ```js
 Object.prototype.toString.call([])
@@ -364,7 +355,7 @@ function template(strings, ...keys) {
 }
 ```
 
-This is the magic behind famous library called styled-components, which is popular in React-community.
+This is the [magic behind](http://mxstbr.blog/2016/11/styled-components-magic-explained/) famous library called styled-components, which is popular in React community.
 
 ## A `constructor` property
 
